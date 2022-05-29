@@ -9,7 +9,7 @@ class Circle
 public:
   Circle(Point2d center, double radius);
 
-  bool pointInCircle(const Point2d& point);
+  bool contain(const Point2d& point);
   double distanceTo(const Point2d& point);
 
 private:

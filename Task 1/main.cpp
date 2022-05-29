@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Circle.h"
 #include "Point2d.h"
 #include "Comparison.h"
@@ -5,13 +6,13 @@
 
 int main()
 {
-  Circle manipulatorOne(Point2d(5.5, 0.0), 4);
-  Circle manipulatorTwo(Point2d(5.5, 0.0), 4);
+  Circle device1(Point2d(5.5, 0.0), 4);
+  Circle device2(Point2d(5.5, 0.0), 4);
 
   Point2d point(2.0, 0.0);
 
-  auto pointInOne = manipulatorOne.pointInCircle(point);
-  auto pointInTwo = manipulatorTwo.pointInCircle(point);
+  auto pointInOne = device1.contain(point);
+  auto pointInTwo = device2.contain(point);
 
   if (pointInOne == false && pointInTwo == false)
   {
@@ -19,8 +20,8 @@ int main()
     return 0;
   }
   
-  auto distanceOne = manipulatorOne.distanceTo(point);
-  auto distanceTwo = manipulatorTwo.distanceTo(point);
+  auto distanceOne = device1.distanceTo(point);
+  auto distanceTwo = device2.distanceTo(point);
 
   if (pointInOne && pointInTwo)
   {

@@ -1,5 +1,6 @@
 #include "Circle.h"
 #include "Comparison.h"
+#include <math.h>
 
 
 Circle::Circle(Point2d center, double radius)
@@ -8,7 +9,7 @@ Circle::Circle(Point2d center, double radius)
 
 }
 
-bool Circle::pointInCircle(const Point2d& point)
+bool Circle::contain(const Point2d& point)
 {
   auto distance = distanceTo(point);
 
