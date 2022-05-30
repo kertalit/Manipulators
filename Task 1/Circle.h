@@ -7,10 +7,11 @@
 class Circle
 {
 public:
-  Circle(Point2d center, double radius);
+  Circle(const Point2d& center, double radius);
 
-  bool contain(const Point2d& point);
-  double distanceTo(const Point2d& point);
+  bool contain(const Point2d& point) const;
+
+  Point2d getCenter();
 
 private:
   Point2d center;

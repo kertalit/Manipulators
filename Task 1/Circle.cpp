@@ -3,20 +3,19 @@
 #include <math.h>
 
 
-Circle::Circle(Point2d center, double radius)
+Circle::Circle(const Point2d& center, double radius)
   :center(center), radius(radius)
 {
 
 }
 
-bool Circle::contain(const Point2d& point)
+bool Circle::contain(const Point2d& point) const
 {
-  auto distance = distanceTo(point);
-
-  return lessOrEqual(distance, radius);
+  return lessOrEqual(center.distanceTo(point), radius);
 }
 
-double Circle::distanceTo(const Point2d& point)
+Point2d Circle::getCenter()
 {
-  return sqrt(pow((point.x - center.x), 2) + pow((point.y - center.y), 2));
+  return center;
 }
+

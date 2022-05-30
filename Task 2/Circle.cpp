@@ -2,32 +2,23 @@
 #include "Comparison.h"
 
 
-Circle::Circle(Point2d position)
-  :position(position)
+Circle::Circle(const Point2d& center)
+  :center(center)
 {
 
 }
 
-
-double Circle::distanceTo(PointPtr point)
+bool Circle::contain(const Point2d& point) const
 {
-  return sqrt(pow((point->x - position.x), 2) + pow((point->y - position.y), 2));
+  return lessOrEqual(center.distanceTo(point), radius);
 }
 
-void Circle::printPassed()
+Point2d Circle::getCenter()
 {
-  for (auto point : passed)
-  {
-    std::cout << *point;
-  }
+  return center;
 }
 
-void Circle::setPosition(const Point2d& point)
+Point2d Circle::setCenter(const Point2d& position)
 {
-  position = point;
-}
-
-void Circle::addPosition(PointPtr point)
-{
-  passed.push_back(point);
+  return center = position;
 }

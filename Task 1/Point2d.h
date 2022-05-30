@@ -9,6 +9,8 @@ public:
 
   Point2d(double x, double y);
 
+  double distanceTo(const Point2d& point) const;
+
   double x;
   double y;
 };

@@ -4,7 +4,7 @@
 
 bool equal(double a, double b, double tol)
 {
-  return fabs((a - b)) <= tol;
+  return fabs(a - b) <= tol;
 }
 bool greater(double a, double b, double tol)
 {

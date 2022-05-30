@@ -7,18 +7,15 @@
 class Circle
 {
 public:
-  Circle(Point2d position);
+  Circle(const Point2d& center);
 
-  double distanceTo(PointPtr point);
+  bool contain(const Point2d& point) const;
 
-  void printPassed();
-
-  void setPosition(const Point2d& point);
-
-  void addPosition(PointPtr point);
+  Point2d getCenter();
+  Point2d setCenter(const Point2d& position);
 
 private:
-  Point2d position;
-  std::vector<PointPtr> passed;
+  Point2d center;
+  double radius;
 };
 #endif // !_CIRCLE_H

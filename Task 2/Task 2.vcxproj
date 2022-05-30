@@ -21,11 +21,13 @@
   <ItemGroup>
     <ClInclude Include="Circle.h" />
     <ClInclude Include="Comparison.h" />
+    <ClInclude Include="Device.h" />
     <ClInclude Include="Point2d.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Comparison.cpp" />
+    <ClCompile Include="Device.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Point2d.cpp" />
   </ItemGroup>
