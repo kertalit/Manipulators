@@ -2,6 +2,7 @@
 #include <math.h>
 
 Point2d::Point2d()
+  :x(0), y(0)
 {
 
 }
@@ -27,7 +28,7 @@ std::ostream& operator<<(std::ostream& stream, const Point2d& point)
   return stream;
 }
 
-std::istream& operator>> (std::istream& stream, Point2d& point)
+std::istream& operator>>(std::istream& stream, Point2d& point)
 {
   stream >> point.x >> point.y;
 
