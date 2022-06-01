@@ -6,26 +6,20 @@
 
 int main()
 {
-  Circle circle1(Point2d(0, 0));
-  Circle circle2(Point2d(2, 1));
+  Circle circle1(Point2d(0, 0), 1);
+  Circle circle2(Point2d(2, 1), 1);
 
   Device device1(circle1);
   Device device2(circle2);
   
   std::vector<Point2d> points = { Point2d(1, 3), Point2d(2, 1.41), Point2d(0.2, -7), Point2d(-5, -1), Point2d(0, 9) }; 
 
-  for (const auto& point : points) // maybe need to create a function
+  for (const auto& point : points)
   {
-    if (lessOrEqual(device1.getPosition().distanceTo(point), device2.getPosition().distanceTo(point))) 
-    {
-      device1.setPosition(point);
-      device1.addPosition(point);
-    }
+    if (lessOrEqual(device1.distanceTo(point), device2.distanceTo(point))) 
+      device1.move(point);
     else
-    {
-      device2.setPosition(point);
-      device2.addPosition(point);
-    }
+      device2.move(point);
   }
 
   std::cout << "Device1: "; 

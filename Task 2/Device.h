@@ -4,20 +4,17 @@
 #include <vector>
 #include "Circle.h"
 
-
-
 class Device
 {
 public:
   
   Device(const Circle& circle);
 
-  void setPosition(const Point2d& point);
-  Point2d getPosition();
+  void move(const Point2d& point);
 
-  void addPosition(const Point2d& point);
+  double distanceTo(const Point2d& point) const;
 
-  void printPassed();
+  void printPassed() const;
 
 private:
   Circle circle;

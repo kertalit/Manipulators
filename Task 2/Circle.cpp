@@ -1,9 +1,8 @@
 #include "Circle.h"
 #include "Comparison.h"
 
-
-Circle::Circle(const Point2d& center)
-  :center(center)
+Circle::Circle(const Point2d& center, double radius)
+  :center(center), radius(radius)
 {
 
 }
@@ -13,7 +12,7 @@ bool Circle::contain(const Point2d& point) const
   return lessOrEqual(center.distanceTo(point), radius);
 }
 
-Point2d Circle::getCenter()
+Point2d Circle::getCenter() const
 {
   return center;
 }

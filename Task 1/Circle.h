@@ -3,7 +3,6 @@
 
 #include "Point2d.h"
 
-
 class Circle
 {
 public:
@@ -11,7 +10,7 @@ public:
 
   bool contain(const Point2d& point) const;
 
-  Point2d getCenter();
+  Point2d getCenter() const;
 
 private:
   Point2d center;

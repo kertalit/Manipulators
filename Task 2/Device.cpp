@@ -1,31 +1,24 @@
 #include "Device.h"
 
-
 Device::Device(const Circle& circle)
   :circle(circle)
 {
   
 }
 
-void Device::setPosition(const Point2d& point)
+void Device::move(const Point2d& point)
 {
   circle.setCenter(point);
-}
-
-Point2d Device::getPosition()
-{
-  return circle.getCenter();
-}
-
-void Device::addPosition(const Point2d& point)
-{
   passed.push_back(point);
 }
 
-void Device::printPassed()
+double Device::distanceTo(const Point2d& point) const
+{
+  return circle.getCenter().distanceTo(point);
+}
+
+void Device::printPassed() const
 {
   for (const auto& point : passed)
-  {
     std::cout << point;
-  }
 }

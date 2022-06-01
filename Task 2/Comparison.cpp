@@ -1,7 +1,6 @@
 #include "Comparison.h"
 #include <math.h>
 
-
 bool equal(double a, double b, double tol)
 {
   return fabs(a - b) <= tol;

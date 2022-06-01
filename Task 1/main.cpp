@@ -27,17 +27,13 @@ int main()
 
     if (equal(distance1, distance2))
       std::cout << "Use any manipulator" << std::endl;
-
     else if  (less(distance1, distance2))
       std::cout << "Use manipulator # 1" << std::endl;
-
     else
       std::cout << "Use manipulator # 2" << std::endl;
   }
-
   else if (hit1)
     std::cout << "Use manipulator # 1" << std::endl;
-
   else
     std::cout << "Use manipulator # 2" << std::endl;
 
