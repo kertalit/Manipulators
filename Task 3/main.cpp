@@ -13,9 +13,9 @@ struct Point3d
   double y = 0.;
   double z = 0.;
 
-  Point3d operator+(const Point3d& other)
+  Point3d operator+(const Point3d& other) const
   {
-    return { x += other.x, y += other.y, z += other.z };
+    return { x + other.x, y + other.y, z + other.z };
   }
 };
 
@@ -64,28 +64,28 @@ int main()
   std::string line;
   std::getline(file, line);
 
-  auto original = parserPoint(line);
+  auto origin = parserPoint(line);
 
   while (!file.eof())
   {
     std::string line;
     std::getline(file, line);
 
-    std::regex reg("[Xx]-?[0-9]*; ?[Yy]-?[0-9]*; ?[Zz]-?[0-9]*;");
+    std::regex reg(" *[Xx]-?[0-9]*; *[Yy]-?[0-9]*; *[Zz]-?[0-9]*; *");
 
     std::smatch m;
 
     if ( !std::regex_match(line, m, reg) )
     {
-      std::cout << original << std::endl;
+      std::cout << origin << std::endl;
       std::cout << "error script" << std::endl;
       return -1;
     }
 
     transform(line);
 
-    original = original + parserPoint(line);
+    origin = origin + parserPoint(line);
   }
   
-  std::cout << original << std::endl;
+  std::cout << origin << std::endl;
 }
