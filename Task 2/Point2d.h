@@ -8,7 +8,6 @@
 class Point2d
 {
 public:
-  //Point2d();
   Point2d(double x, double y);
 
   double distanceTo(const Point2d& point) const;
