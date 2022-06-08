@@ -12,7 +12,7 @@ public:
   bool contain(const Point2d& point) const;
 
   Point2d getCenter() const;
-  Point2d setCenter(const Point2d& position);
+  void setCenter(const Point2d& position);
 
 private:
   Point2d center;

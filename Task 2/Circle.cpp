@@ -17,7 +17,7 @@ Point2d Circle::getCenter() const
   return center;
 }
 
-Point2d Circle::setCenter(const Point2d& position)
+void Circle::setCenter(const Point2d& position)
 {
-  return center = position;
+  center = position;
 }
